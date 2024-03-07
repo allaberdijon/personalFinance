@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>rashod</title>
+</head>
+<body>
+    <h1> rashod </h1>
+    <ul>
+    <a href="{% url 'create_expenses' %}"><h2>Добавить запись</h2></a>
+        {% for expense in expenses %}
+        <a href="{% url 'expenses_detail' expense.id %}"><li>{{ expense.category }}: {{ expense.amount }}</li></a>
+        {% endfor %}
+    </ul>
+</body>
+</html>
